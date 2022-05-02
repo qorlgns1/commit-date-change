@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>커밋 날짜 변경 프로그램</title>
+  <link rel="stylesheet" href="./src/style/style.css">
 </head>
 
 <body>
-  <label for="date">잔디 심을 날짜 : </label>
-  <input type="date" id="date">
-  <br>
-  <label for="time">시간 : </label>
-  <input type="time" id="time">
-  <button id="create-date" type="button">생성하기</button>
-  <script src="./src/index.js"></script>
+  <div class="wrapper">
+    <label for="date">잔디 심을 날짜</label>
+    <input type="date" id="date">
+    <label for="time">시간</label>
+    <input type="time" id="time">
+    <button id="btn-copy" type="button">명령어 생성 후 복사하기</button>
+    <div class="messagebox"></div>
+  </div>
+  <script src="./src/js/index.js"></script>
 </body>
 
 </html>
