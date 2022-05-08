@@ -13,6 +13,11 @@ const copyToClipboard = (val) => {
   document.body.removeChild(t);
 };
 
+const resetMessageBox = (node, second) => {
+  setTimeout(() => {
+    node.innerHTML = "";
+  },second * 1000);
+}
 const copyBtn = document.getElementById("btn-copy");
 const dateInput = document.getElementById("date");
 const timeInput = document.getElementById("time");
@@ -32,6 +37,7 @@ copyBtn.addEventListener("click", () => {
   if (!dateInput.value || !timeInput.value) {
     messagebox.style.color = "red";
     messagebox.innerHTML = `날짜 또는 시간을 선택해주세요!`;
+    resetMessageBox(messagebox,1);
     return;
   } else {
     copyToClipboard(message);
@@ -42,5 +48,6 @@ copyBtn.addEventListener("click", () => {
     <br> 
     만약 복사가 되지 않았다면 콘솔창에서 메시지를 확인해주세요!
     `;
+    resetMessageBox(messagebox,1);
   }
 });
